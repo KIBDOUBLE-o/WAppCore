@@ -47,3 +47,8 @@ class WebConstructor:
         self._index = dump["index"]
         self._style = dump["style"]
         self._scripts = dump["script"]
+
+    def clear(self):
+        self._index = []
+        self._style = []
+        self._scripts = []
