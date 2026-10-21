@@ -3,16 +3,22 @@ from typing import Callable
 
 import webview
 
+from interface.interface_api import InterfaceApi
 from interface.windows_manager import WindowsManager
 
 
 class UserInterface:
-    def __init__(self, on_inited=lambda: None, on_loaded=lambda: None):
+    def __init__(self, interface_api_interface: InterfaceApi, on_inited=lambda: None, on_loaded=lambda: None):
         self._api_functions: dict[str, Callable] = {}
+        self._interface_api_interface: InterfaceApi = interface_api_interface
         self.api = None
 
         self.on_inited = on_inited
         self.on_loaded = on_loaded
+
+    @property
+    def interface(self):
+        return self._interface_api_interface
 
     def _contains_api_function(self, key: str) -> bool:
         return key in self._api_functions.keys()
@@ -26,15 +32,15 @@ class UserInterface:
             return
         self._api_functions[key] = function
 
-    @staticmethod
-    def call(target_window_name: str, function_name: str, args: list | None = None):
-        if WindowsManager.is_opened(target_window_name):
-            window = WindowsManager.get_window(target_window_name)
-            js_args = [json.loads(arg) for arg in args] if args else []
-            try:
-                window.evaluate_js(f"{function_name}({', '.join(js_args)});")
-            except Exception as e:
-                print(f"JS Evaluation error: {e}")
+    # @staticmethod
+    # def call(target_window_name: str, function_name: str, args: list | None = None):
+    #     if WindowsManager.is_opened(target_window_name):
+    #         window = WindowsManager.get_window(target_window_name)
+    #         js_args = [json.loads(arg) for arg in args] if args else []
+    #         try:
+    #             window.evaluate_js(f"{function_name}({', '.join(js_args)});")
+    #         except Exception as e:
+    #             print(f"JS Evaluation error: {e}")
 
     def on_loaded(self):
         self.on_loaded()
