@@ -5,11 +5,8 @@ from interface.windows_manager import WindowsManager
 
 
 class InterfaceApi:
-    def __init__(self, window_name: str, api: dict[str, Callable]):
+    def __init__(self, window_name: str):
         self.window_name = window_name
-
-        for name, function in api.items():
-            setattr(self, name, lambda *args, _f=function, **kwargs: _f(self, *args, **kwargs))
 
     def call(self, function_name: str, *args):
         window = WindowsManager.get_window(self.window_name)

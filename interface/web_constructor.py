@@ -43,10 +43,15 @@ class WebConstructor:
             "script": self._scripts
         }
 
-    def load_dump(self, dump: dict):
+    def load_dump(self, dump: dict) -> 'WebConstructor':
         self._index = dump["index"]
         self._style = dump["style"]
         self._scripts = dump["script"]
+        return self
+
+    @staticmethod
+    def load(dump: dict) -> 'WebConstructor':
+        return WebConstructor().load_dump(dump)
 
     def clear(self):
         self._index = []

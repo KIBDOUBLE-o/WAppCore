@@ -10,8 +10,7 @@ from utils import get_key
 
 class Example:
     def __init__(self):
-        self.resources = ResourcesBundle(get_key())
-        self.resources.load_dump("resources.bundle")
+        self.resources = ResourcesBundle.load_from("resources.bundle", get_key())
 
 
         self.ui = UserInterface(
@@ -32,11 +31,10 @@ class Example:
         self.ui.register_api_function("print", lambda msg: print(f"JS MSG: {msg}"))
 
     def _on_inited(self):
-        ui_bi = self.resources.take_from_category_decoded("interface", "main")
-        raw_dump = json.loads(ui_bi.content)
+        ui_item = self.resources.take_decoded("interface", "main")
+        raw_dump = json.loads(ui_item.content)
 
-        interface = WebConstructor()
-        interface.load_dump(raw_dump)
+        interface = WebConstructor.load(raw_dump)
         WindowsManager.create_window(
             name="Example",
             constructor=interface,

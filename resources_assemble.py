@@ -19,7 +19,7 @@ if __name__ == '__main__':
     constructor.include_index(DataOperator.read("resources/ui/index.html").decode())
     constructor.include_style(DataOperator.read("resources/ui/style.css").decode())
     constructor.include_script(DataOperator.read("resources/ui/script.js").decode())
-    bundle.put_in_category("interface", "main", json.dumps(constructor.create_dump()).encode())
+    bundle.put("interface", "main", json.dumps(constructor.create_dump()).encode())
 
-    bundle.create_dump("resources.bundle")
+    bundle.save("resources.bundle")
 
