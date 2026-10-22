@@ -2,7 +2,7 @@ import json
 
 from data_operator import DataOperator
 from interface.web_constructor import WebConstructor
-from resource.resources_bundle import ResourcesBundle
+from wac.resource import ResourcesBundle
 from utils import get_key
 
 if __name__ == '__main__':

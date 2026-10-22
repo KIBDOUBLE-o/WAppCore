@@ -1,7 +1,6 @@
 import json
-from collections.abc import Callable
 
-from interface.windows_manager import WindowsManager
+from wac.interface.windows_manager import WindowsManager
 
 
 class InterfaceApi:

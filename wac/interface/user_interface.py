@@ -1,10 +1,8 @@
-import json
 from typing import Callable
 
 import webview
 
-from interface.interface_api import InterfaceApi
-from interface.windows_manager import WindowsManager
+from wac.interface.interface_api import InterfaceApi
 
 
 class UserInterface:
