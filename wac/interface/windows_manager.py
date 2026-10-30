@@ -35,5 +35,5 @@ class WindowsManager:
 
     @classmethod
     def terminate_window(cls, name: str):
-        cls.get_window(name)
+        cls.get_window(name).destroy()
         del cls._windows[name]
