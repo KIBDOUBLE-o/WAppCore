@@ -1,8 +1,8 @@
 import base64
 import json
 
-from wac.data_operator import DataOperator
-from wac.resource.bundle_item import BundleItem
+from src.wac.data_operator import DataOperator
+from src.wac.resource.bundle_item import BundleItem
 
 
 class ResourcesBundle:

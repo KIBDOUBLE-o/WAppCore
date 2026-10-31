@@ -4,7 +4,7 @@ from example_iapi import ExampleIAPI
 from interface.user_interface import UserInterface
 from interface.web_constructor import WebConstructor
 from interface.windows_manager import WindowsManager
-from wac.resource import ResourcesBundle
+from src.wac.resource import ResourcesBundle
 from utils import get_key
 
 
