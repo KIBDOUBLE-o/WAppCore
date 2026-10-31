@@ -1,0 +1,6 @@
+pywebview>=6.2.1
+
+[dev]
+pytest>=7.0
+ruff
+mypy

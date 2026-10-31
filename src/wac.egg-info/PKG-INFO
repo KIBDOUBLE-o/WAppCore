@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: wac
+Version: 0.1.0
+Summary: Короткое описание пакета
+Author-email: KIBDOUBLE <i.kib.double@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/username/my-package
+Project-URL: Repository, https://github.com/username/my-package
+Keywords: web,package,app,core
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pywebview>=6.2.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Dynamic: license-file
