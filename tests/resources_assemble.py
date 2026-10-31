@@ -16,9 +16,9 @@ if __name__ == '__main__':
 
     constructor = WebConstructor()
 
-    constructor.include_index(DataOperator.read("resources/ui/index.html").decode())
-    constructor.include_style(DataOperator.read("resources/ui/style.css").decode())
-    constructor.include_script(DataOperator.read("resources/ui/script.js").decode())
+    constructor.include_index(DataOperator.read("../../tests/resources/ui/index.html").decode())
+    constructor.include_style(DataOperator.read("../../tests/resources/ui/style.css").decode())
+    constructor.include_script(DataOperator.read("../../tests/resources/ui/script.js").decode())
     bundle.put("interface", "main", json.dumps(constructor.create_dump()).encode())
 
     bundle.save("resources.bundle")
