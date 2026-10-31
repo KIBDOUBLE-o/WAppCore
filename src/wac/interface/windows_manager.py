@@ -1,9 +1,9 @@
 import webview
 from webview import Window
 
-from src.wac.interface.window_item import WindowItem
+from wac.interface.window_item import WindowItem
 
-from src.wac.interface.web_constructor import WebConstructor
+from wac.interface.web_constructor import WebConstructor
 
 
 class WindowsManager:

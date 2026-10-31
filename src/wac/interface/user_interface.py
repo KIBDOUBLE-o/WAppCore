@@ -2,7 +2,7 @@ from typing import Callable
 
 import webview
 
-from src.wac.interface.interface_api import InterfaceApi
+from wac.interface.interface_api import InterfaceApi
 
 
 class UserInterface:

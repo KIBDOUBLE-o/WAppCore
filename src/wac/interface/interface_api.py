@@ -1,6 +1,6 @@
 import json
 
-from src.wac.interface.windows_manager import WindowsManager
+from wac.interface.windows_manager import WindowsManager
 
 
 class InterfaceApi:

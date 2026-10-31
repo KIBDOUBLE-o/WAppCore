@@ -1,4 +1,4 @@
-from crypto import Crypto
+from wac.crypto import Crypto
 
 
 class DataOperator:
